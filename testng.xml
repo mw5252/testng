@@ -47,7 +47,7 @@
         </classes>
     </test>
 
-    <!--    클래스 중 특정 메소드만 수행 된다.ㄹ-->
+    <!--    클래스 중 특정 메소드만 수행 된다.-->
     <test name="MethodsRun">
         <classes>
             <class name="com.kakaopay.sample.SimpleTest">
@@ -58,14 +58,6 @@
             </class>
         </classes>
 
-
-        <!--        <classes>
-                    <class name="SimpleTest">
-                        <methods>
-                            <include name="aFastTest"/>
-                        </methods>
-                    </class>
-                </classes>-->
     </test>
 
     <test name="Testing Parameterization">
@@ -73,7 +65,7 @@
         <parameter name="username" value="testuser"/>
         <parameter name="password" value="testpassword"/>
         <classes>
-            <class name="com.kakaopay.sample.TestParameters" />
+            <class name="com.kakaopay.sample.TestParameters"/>
         </classes>
     </test>
 
