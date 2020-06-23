@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<!--
+<suite name="Package Run" verbose="1">
+    <test name="Regression1">
+        <packages>
+            <package name="sample"/>
+        </packages>
+    </test>
+</suite>
+-->
+
+<suite name="All Test Suite">
+    <!--    <test name="Nopackage">
+            <classes>
+                <class name="SimpleTest"/>
+            </classes>
+        </test>-->
+
+    <!--    지정한 패키지의 테스트가 모두 수행된다. -->
+    <test name="Package Run">
+        <packages>
+            <package name="com.kakaopay.sample"/>
+            <package name="com.kakaopay.example1"/>
+        </packages>
+    </test>
+
+    <!-- 그룹을 지정하면, 이후 진행할 테스트 클래스 중에 해당 그룹의 건만 수행 된다.    -->
+    <test name="GroupRun">
+        <groups>
+            <run>
+                <exclude name="fast"/>
+                <include name="slow"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.kakaopay.sample.SimpleTest"/>
+        </classes>
+    </test>
+
+    <test name="ClassRun">
+        <classes>
+            <class name="com.kakaopay.sample.TestNGDependsOnMethodsExample"/>
+        </classes>
+    </test>
+
+    <!--    클래스 중 특정 메소드만 수행 된다.ㄹ-->
+    <test name="MethodsRun">
+        <classes>
+            <class name="com.kakaopay.sample.SimpleTest">
+                <methods>
+                    <exclude name="aSlowTest"/>
+                    <include name="aFastTest"/>
+                </methods>
+            </class>
+        </classes>
+
+
+        <!--        <classes>
+                    <class name="SimpleTest">
+                        <methods>
+                            <include name="aFastTest"/>
+                        </methods>
+                    </class>
+                </classes>-->
+    </test>
+
+    <test name="Testing Parameterization">
+        <parameter name="browser" value="Firefox"/>
+        <parameter name="username" value="testuser"/>
+        <parameter name="password" value="testpassword"/>
+        <classes>
+            <class name="com.kakaopay.sample.TestParameters" />
+        </classes>
+    </test>
+
+</suite>
